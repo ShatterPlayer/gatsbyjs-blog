@@ -19,8 +19,8 @@ export const query = graphql`
       edges {
         node {
           title
-          fixed {
-            ...GatsbyContentfulFixed
+          fluid {
+            ...GatsbyContentfulFluid
           }
         }
       }
@@ -37,7 +37,7 @@ const BlogPost = ({ data }) => {
         );
 
         const alt = node.data.target.fields.title['en-US'];
-        return <Img alt={alt} fixed={assetEdge.node.fixed} />;
+        return <Img alt={alt} fluid={assetEdge.node.fluid} />;
       }
     }
   };
